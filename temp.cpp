@@ -5,6 +5,9 @@
 #include <cfloat>
 #include <algorithm>
 #include <numeric>
+#include <vector>
+#include <iterator>
+#include <set>
 using namespace std;
 
 const double PI=acos(-1);
