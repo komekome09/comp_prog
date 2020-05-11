@@ -1,16 +1,6 @@
-#include <iostream>
-#include <string>
-#include <stdio.h>
-#include <cmath>
-#include <cfloat>
-#include <algorithm>
-#include <numeric>
-#include <vector>
-#include <iterator>
-#include <set>
-#include <map>
+#include <bits/stdc++.h>
 using namespace std;
-
+using ll = long long;
 const double PI=acos(-1);
 
 int main(){
