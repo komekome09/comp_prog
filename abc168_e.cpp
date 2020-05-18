@@ -4,6 +4,24 @@ using namespace std;
 using ll = long long;
 const double PI=acos(-1);
 
+
+ll gcd(ll a, ll b){
+    if(b == 0) return a;
+    ll aa = a, bb = b;
+    if(aa > bb){
+        ll temp = aa;
+        aa = bb;
+        bb = temp;
+    }
+
+    while(bb != 0){
+        ll temp = bb;
+        bb = aa%bb;
+        aa = temp;
+    }
+    return aa;
+}
+
 int main(){
     ll n;
     cin >> n;
