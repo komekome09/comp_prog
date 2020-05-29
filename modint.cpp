@@ -12,6 +12,8 @@ public:
     constexpr Fp operator- (const Fp& r) const noexcept { return Fp(*this) -= r; }
     constexpr Fp operator* (const Fp& r) const noexcept { return Fp(*this) *= r; }
     constexpr Fp operator/ (const Fp& r) const noexcept { return Fp(*this) /= r; }
+    constexpr Fp operator-- (const Fp& r) const noexcept { return Fp(*this) -= 1; }
+    constexpr Fp operator++ (const Fp& r) const noexcept { return Fp(*this) += 1; }
     constexpr Fp& operator+= (const Fp& r) noexcept {
         val += r.val;
         if(val >= MOD) val -= MOD;
