@@ -1,3 +1,9 @@
+#include <bits/stdc++.h>
+#define rep(i, n) for(ll i = 0; i < (n); ++i)
+using namespace std;
+using ll = long long;
+const double PI=acos(-1);
+
 const ll mod = 1000000007;
 
 template<int MOD> class Fp {
@@ -69,3 +75,14 @@ public:
     }
 };
 using mint = Fp<mod>;
+
+int main(){
+    ll n, m; cin >> n >> m;
+    mint ans(1);
+    rep(i, n) ans *= i+1;
+    rep(i, m) ans *= i+1;
+    if(n == m) ans *= 2;
+    else if(abs(n - m) > 1) ans = 0;
+    cout << ans << endl;
+    return 0;
+}
