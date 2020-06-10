@@ -147,4 +147,6 @@ $RECYCLE.BIN/
 test
 .vscode
 
+debug.py
+
 # End of https://www.gitignore.io/api/c,c++,linux,macos,windows
