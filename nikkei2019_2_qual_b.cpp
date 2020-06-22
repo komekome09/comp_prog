@@ -1,5 +1,17 @@
-const ll mod = 1000000007;
-//const ll mod = 998244353;
+#include <bits/stdc++.h>
+#define rep(i, n) for(ll i = 0; i < (n); ++i)
+using namespace std;
+using ll = long long;
+const double PI=acos(-1);
+
+template<typename T>
+istream& operator>> (istream& is, vector<T> &vec){
+    for(T& x: vec) is >> x;
+    return is;
+}
+
+//const ll mod = 1000000007;
+const ll mod = 998244353;
 
 template<int MOD> class Fp {
     ll val;
@@ -70,3 +82,28 @@ public:
     }
 };
 using mint = Fp<mod>;
+
+int main(){
+    ll n, m = -1; cin >> n;
+    vector<ll> a(100005, 0), b(n);
+    rep(i, n){
+        cin >> b[i];
+        a[b[i]]++;
+        m = max(m, b[i]);
+    }
+    rep(i, n){
+        if(b[0] != 0 || (i != 0 && b[i] == 0)){
+            cout << 0 << endl;
+            return 0;
+        }
+    }
+    mint sum(1);
+    rep(i, m+1){
+        if(i < 2) continue;
+        sum *= mint(a[i-1]).modpow(a[i]);
+        if(a[i] == 0) sum *= 0;
+    }
+    cout << sum << endl;
+
+    return 0;
+}
